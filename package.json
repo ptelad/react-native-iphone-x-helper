@@ -23,7 +23,7 @@
     "url": "https://github.com/ptelad/react-native-iphone-x-helper/issues"
   },
   "homepage": "https://github.com/ptelad/react-native-iphone-x-helper#readme",
-  "dependencies": {
+  "peerDependencies": {
     "react-native": "^0.42.3"
   }
 }
