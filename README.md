@@ -12,7 +12,7 @@ this method it for creating stylesheets with the iPhone X in mind
 **regularStyle (*optional*)** - the style to apply if you're not on iPhone X
 
 #### Example ####
-```
+```js
 // in style.js
 
 import { StyleSheet } from 'react-native';
@@ -41,9 +41,11 @@ export default StyleSheet.create({
 **returns** - `true` if you running on an iPhone X.
 
 #### Example ####
-```
+```js
 import { isIphoneX } from 'react-native-iphone-x-helper'
-...
+
+// ...
+
 if (isIphoneX()) {
     // do this...
 } else {
