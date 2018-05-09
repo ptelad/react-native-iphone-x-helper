@@ -56,5 +56,36 @@ if (isIphoneX()) {
 }
 ```
 
+### getStatusBarHeight([safe]) ###
+
+#### Parameters ####
+**safe** - whether you want for get safe area height or not
+
+**returns** - the height of the status bar: `44` for safe iPhoneX, `30` for unsafe iPhoneX, `20` for other iOS devices and `StatusBar.currentHeight` for Android.
+
+#### Example ####
+
+```js
+// in style.js
+
+import { StyleSheet } from 'react-native';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+
+export default StyleSheet.create({
+    header:{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        padding:10,
+        height: 60,
+        backgroundColor: 'transparent',
+        paddingTop: getStatusBarHeight()
+    },
+});
+```
+
+***NOTE:*** If your using the the unsafe statusbar height, make sure to add 14dp of padding to your content, otherwise it's going to be flush against the notch
+
 ## Licence ##
 **MIT**
