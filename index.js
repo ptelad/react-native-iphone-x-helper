@@ -23,3 +23,7 @@ export function getStatusBarHeight(safe) {
         android: StatusBar.currentHeight
     });
 }
+
+export function getBottomSpace() {
+    return isIphoneX() ? 34 : 0;
+}

@@ -87,5 +87,26 @@ export default StyleSheet.create({
 
 ***NOTE:*** If your using the the unsafe statusbar height, make sure to add 14dp of padding to your content, otherwise it's going to be flush against the notch
 
+### getBottomSpace ###
+
+**returns** - the height of the bottom to fit the safe area: `34` for iPhone X and `0` for other devices.
+
+#### Example ####
+
+```js
+// in style.js
+
+import { StyleSheet } from 'react-native';
+import { getBottomSpace } from 'react-native-iphone-x-helper'
+
+export default StyleSheet.create({
+    totalview: {
+        flex: 1,
+        backgroundColor: 'transparent',
+        marginBottom: getBottomSpace()
+    },
+});
+```
+
 ## Licence ##
 **MIT**
