@@ -1,5 +1,5 @@
 # react-native-iphone-x-helper
-A library to help you design your react-native app for the iPhone X
+A library to help you design your react-native app for the iPhone X, XS, XS Max & XR
 
 ## Installing ##
 `npm i react-native-iphone-x-helper --save`
