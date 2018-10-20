@@ -25,7 +25,7 @@ export function getStatusBarHeight(safe) {
 }
 
 export function getSafeAreaInset(isLandscape = false) {
-    const inset(top, left, bottom, right) => ({top, left, bottom, right});
+    const inset = (top, left, bottom, right) => ({top, left, bottom, right});
     if (isIphoneX()) {
         return isLandscape ? inset(0, 44, 21, 44) : inset(44, 0, 34, 0);
     } else {
