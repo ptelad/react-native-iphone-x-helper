@@ -87,25 +87,40 @@ export default StyleSheet.create({
 
 ***NOTE:*** If your using the the unsafe statusbar height, make sure to add 14dp of padding to your content, otherwise it's going to be flush against the notch
 
-### getBottomSpace ###
+### getSafeAreaInset ###
 
-**returns** - the height of the bottom to fit the safe area: `34` for iPhone X and `0` for other devices.
+**returns** - the inset of the SafeArea: 
+
+* `(0, 44, 21, 44)` for iPhone X family device in landscape.
+* `(44, 0, 34, 0)` for iPhone X family device in portrait
+* `(statusBarHeight, 0, 0, 0)` for other devices.
+
+Here `(a, b, c, d)` means `{top, left, bottom, right}` object.
 
 #### Example ####
 
 ```js
 // in style.js
 
-import { StyleSheet } from 'react-native';
-import { getBottomSpace } from 'react-native-iphone-x-helper'
+import { getSafeAreaInset } from 'react-native-iphone-x-helper'
 
-export default StyleSheet.create({
-    totalview: {
-        flex: 1,
-        backgroundColor: 'transparent',
-        marginBottom: getBottomSpace()
-    },
-});
+class ... extends React.Component {
+    render() {
+        const {width, height} = Dimensions.get('window');
+        const isLandscape = width > height;
+        const inset = getSafeAreaInset(isLandscape);
+        const style = {
+            paddingLeft: inset.left,
+            paddingRight: inset.right,
+            marginBottom: inset.bottom,
+        };
+        return (
+            <View style={[styles.view, style]}>
+                ...
+            </View>
+        )
+    }
+}
 ```
 
 ## Licence ##
