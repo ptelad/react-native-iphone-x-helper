@@ -1,7 +1,7 @@
 import { Dimensions, Platform, StatusBar } from 'react-native';
 
 function isIphone() {
-    return Platform.OS === 'ios' && !Platform.isPad && !Platform.isTVOS;
+    return Platform.OS === 'ios' && !Platform.isPad && !Platform.isTV;
 }
 
 export function isIphoneX() {
