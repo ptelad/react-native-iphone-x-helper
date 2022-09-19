@@ -22,6 +22,7 @@ export function isDynamicIsland() {
 }
 
 const checkDemension = (size) => {
+    // window is not correct sometimes when screen is correct
     const window = Dimensions.get("window")
     const windowRes = window.width == size || window.height == size
     const screen = Dimensions.get("screen")
