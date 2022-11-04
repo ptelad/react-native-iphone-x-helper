@@ -65,7 +65,13 @@ if (isIphoneX()) {
 #### Parameters ####
 **safe** - whether you want for get safe area height or not
 
-**returns** - the height of the status bar: `44` for safe iPhoneX, `30` for unsafe iPhoneX, `20` for other iOS devices and `StatusBar.currentHeight` for Android.
+**returns** - the height of the status bar:
+`50` for safe iPhone 12 Mini and 13 Mini
+`47` for safe others iPhone 12 and 13
+`44` for safe iPhone X
+`30` for unsafe iPhone X
+`20` for other iOS devices
+`StatusBar.currentHeight` for Android.
 
 #### Example ####
 
