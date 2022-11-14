@@ -1,6 +1,6 @@
-import { Dimensions, Platform, StatusBar } from 'react-native';
+const { Dimensions, Platform, StatusBar } = require('react-native');
 
-export function isIphoneX() {
+function isIphoneX() {
     const dimen = Dimensions.get('window');
     return (
         Platform.OS === 'ios' &&
@@ -14,14 +14,14 @@ export function isIphoneX() {
     );
 }
 
-export function ifIphoneX(iphoneXStyle, regularStyle) {
+function ifIphoneX(iphoneXStyle, regularStyle) {
     if (isIphoneX()) {
         return iphoneXStyle;
     }
     return regularStyle;
 }
 
-export function getStatusBarHeight(safe) {
+function getStatusBarHeight(safe) {
     return Platform.select({
         ios: ifIphoneX(safe ? 44 : 30, 20),
         android: StatusBar.currentHeight,
@@ -29,6 +29,8 @@ export function getStatusBarHeight(safe) {
     });
 }
 
-export function getBottomSpace() {
+function getBottomSpace() {
     return isIphoneX() ? 34 : 0;
 }
+
+module.exports = {isIphoneX, ifIphoneX, getStatusBarHeight, getBottomSpace}
